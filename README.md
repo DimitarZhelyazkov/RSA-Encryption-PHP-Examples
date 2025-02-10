@@ -1,11 +1,10 @@
 # RSA-Encryption-PHP-Examples
  Scripts with RSA Algorithm
- 
-/*
+
 	Автор: Димитър Желязков
 	Autor: Dimitar Zhelyazkov
 	Важно! - скриптът на PHP е примерен и с обучителна цел и не е подходящ за вашия сайт.
-*/
+ 
 
 /*  RSA е най-използвания алгоритъм за асиметрично криптиране създаден през 1977 от трима математици
 	Ron Rivest, Adi Shamir и Leonard Adleman.
