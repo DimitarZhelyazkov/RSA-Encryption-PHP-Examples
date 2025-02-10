@@ -1,4 +1,7 @@
 <?php
+/*todo:  Add some check of keys are they valid?  */
+
+
 require_once "keysclas/EncryptionKeysGenerator.php";
 
 $keys = new EncryptionKeysGenerator(7,19); // 7 19
