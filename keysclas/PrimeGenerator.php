@@ -21,7 +21,7 @@ class PrimeGenerator
 	}
 	
 	private function primeGenerator($n) {
-		return floor( bcpow( $this->millsConstant , bcpow( 3 , $n ) ) );
+		return floor( bcpow( $this->millsConstant , bcpow( 3 , $n ) ) ); // formula: M to power of 3 to power of N - where N can e any positive number > 0
 	}
 	public function getPrimes() {
 		return $this->prime;
