@@ -7,7 +7,12 @@
 <pre>
 <?php
 require_once "keysclas/PrimeGenerator.php"; // Mills Constant prime generator
+require_once "keysclas/PrimeGeneratorTwo.php"; //Fermat test + genarator
 require_once "keysclas/EncryptionKeysGenerator.php";
+
+$fermat = new PrimeGeneratorTwo(3,20); // find primes between 3 - 20 using Fermat's Test 
+
+print_r($fermat->getPrimes());
 
 $primes = new PrimeGenerator(2,3); // This need serious computer power to compute the results.
 
