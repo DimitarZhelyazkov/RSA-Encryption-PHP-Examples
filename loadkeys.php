@@ -1,17 +1,14 @@
 <?php
-/*todo:  Add some check of keys are they valid?  */
-
-
 require_once "keysclas/EncryptionKeysGenerator.php";
 
-$keys = new EncryptionKeysGenerator(7,19,100,1000); // 7 19 // send 0 for random key generation Example (0,0,rangeFrom,rangeTo) => 0,0,100,1000
+$keys = new EncryptionKeysGenerator(
+									7, // Prime 1
+									19, // Prime 2
+									100, // Range from
+									1000 // Range to
+									); 
 
-echo $keys->results();
-print_r($keys->getE());
-
-echo "<br><br><br>";
-
-print_r($keys->keyPairs());
+print_r($keys->keyPairs()); // Print all key pairs multidimentional array[EncryptionKey][Array of Decryption keys]
 
 
  
