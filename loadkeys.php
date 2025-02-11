@@ -6,6 +6,9 @@
 <!-- Autor: Dimitar Zhelyazkov -->
 <pre>
 <?php
+
+// Resuslt might not get compute because of php max input value set in .ini file ... check phpinfo(); 
+
 require_once "keysclas/PrimeGenerator.php"; // Mills Constant prime generator
 require_once "keysclas/PrimeGeneratorTwo.php"; //Fermat test + genarator
 require_once "keysclas/EncryptionKeysGenerator.php";
@@ -26,6 +29,7 @@ $keys = new EncryptionKeysGenerator(
 									); 
 
 print_r($keys->keyPairs()); // Print all key pairs - multidimentional array[EncryptionKey][Array of Decryption keys]
+
 ?>
 </pre>
 </body>
