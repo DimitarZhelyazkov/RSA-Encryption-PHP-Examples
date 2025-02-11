@@ -1,7 +1,7 @@
 <?php
 class PrimeGenerator {
 
-	ff
+	private $p;
 
 }
 ?>
