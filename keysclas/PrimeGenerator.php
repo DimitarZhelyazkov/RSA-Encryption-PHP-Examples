@@ -6,9 +6,9 @@ class PrimeGenerator
 		Prime Generator using Mills prime formula
 		Resource: https://en.wikipedia.org/wiki/Mills%27_constant
 		
-		Warning: Your computer might compute the result to the power of 87 max
+		Warning: Your computer might not compute the result.
 		
-		For this example is better to use numbers between 1 and 4
+		For this example is better to use numbers between 1 and 4 in the constructor
 		
 	*/
 	
