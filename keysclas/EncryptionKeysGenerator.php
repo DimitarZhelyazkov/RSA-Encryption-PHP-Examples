@@ -1,5 +1,5 @@
 <?php 
-
+// Autor: Dimitar Zhelyazkov
 class EncryptionKeysGenerator 
 
 {
@@ -20,14 +20,12 @@ class EncryptionKeysGenerator
 		$this->rangeTo = $rangeTo;
 		$this->n = $p * $q;
 		$this->fn = ( $p - 1 ) * ( $q - 1 );
-		$this->encryptionKeys = $this->findE();
-		$this->encryptionKeysPairs = $this->findD();
+		$this->encryptionKeys = $this->findE($this->n , $this->fn );
+		$this->encryptionKeysPairs = $this->findD($this->encryptionKeys , $this->rangeFrom , $this->rangeTo , $this->fn );
 	}	
 
-	private function findE() { // Find Encription Keys return array of available public keys
+	private function findE($n , $fn ) { // Find Encription Keys return array of available public keys
 		$hold = [];
-		$n = $this->n;
-		$fn = $this->fn;
 		for($i = 2; $i < $fn; $i++ ){
 			if($n % $i != 0 && $fn % $i != 0 ) { $hold[] = $i; }	
 		}
@@ -43,12 +41,7 @@ class EncryptionKeysGenerator
 		return $holdprimes;
 	}
 	
-	private function findD() { // Find Decryption Key for each public key given in a range
-		$e = [];
-		$e = $this->encryptionKeys;
-		$rangeFrom = $this->rangeFrom;
-		$rangeTo = $this->rangeTo;
-		$fn = $this->fn;
+	private function findD($e = [], $rangeFrom, $rangeTo , $fn) { // Find Decryption Key for each public key given in a range
 		$hold = [[]];
 		for($i = 0; $i < count($e); $i++ ){
 			for($k = $rangeFrom; $k <= $rangeTo; $k++) {
@@ -58,19 +51,9 @@ class EncryptionKeysGenerator
 		}	
 		return $hold;
 	}
-	
-	public function results() {
-		return  "Prime 1: " . $this->p . 
-				"<br>Prime 2: " . $this->q .
-				"<br>N: " . $this->n . 
-				"<br>Fn: " . $this->fn .
-				"<br> ";
-	}
-	public function getE() {
-		return $this->encryptionKeys;
-	}
+
 	public function keyPairs() {
-		return $this->encryptionKeysPairs;
+		return $this->encryptionKeysPairs; // Return multidimentional array of key pairs [Encryption key][Array of decryption keys]
 	}
 }
 ?>

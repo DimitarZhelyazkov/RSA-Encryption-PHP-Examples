@@ -1,3 +1,10 @@
+<html>
+<head>
+<title>RSA-Encryption-PHP-Examples</title>
+</head>
+<body>
+<!-- Autor: Dimitar Zhelyazkov -->
+<pre>
 <?php
 require_once "keysclas/EncryptionKeysGenerator.php";
 
@@ -8,8 +15,8 @@ $keys = new EncryptionKeysGenerator(
 									1000 // Range to
 									); 
 
-print_r($keys->keyPairs()); // Print all key pairs multidimentional array[EncryptionKey][Array of Decryption keys]
-
-
- 
+print_r($keys->keyPairs()); // Print all key pairs - multidimentional array[EncryptionKey][Array of Decryption keys]
 ?>
+</pre>
+</body>
+</html>
