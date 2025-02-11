@@ -49,7 +49,7 @@ class EncryptionKeysGenerator
 	}
 	
 	public function results() {
-		return "Prime 1: " . $this->p . 
+		return  "Prime 1: " . $this->p . 
 				"<br>Prime 2: " . $this->q .
 				"<br>N: " . $this->n . 
 				"<br>Fn: " . $this->fn .
